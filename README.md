@@ -1,1 +1,1 @@
-# meals2go
+# meals.go
