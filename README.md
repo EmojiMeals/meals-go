@@ -1,4 +1,4 @@
-# meals.go ![emoji? yes](https://img.shields.io/badge/emoji%3F-%F0%9F%91%8D-brightgreen) ![Tests](https://github.com/EmojiMeals/meals.go/workflows/Tests/badge.svg?branch=master)
+# meals-go ![emoji? yes](https://img.shields.io/badge/emoji%3F-%F0%9F%91%8D-brightgreen) ![Tests](https://github.com/EmojiMeals/meals-go/workflows/Tests/badge.svg?branch=master)
 
 Find what you can cook with your emojis
 
@@ -7,13 +7,13 @@ Find what you can cook with your emojis
 install the package:
 
 ```console
-go get github.com/EmojiMeals/meals.go
+go get github.com/EmojiMeals/meals-go
 ```
 
 then start using it:
 
 ```console
-import "github.com/EmojiMeals/meals.go"
+import "github.com/EmojiMeals/meals-go"
 ```
 
 ## Usage 
@@ -42,5 +42,5 @@ No not yet
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/EmojiMeals/meals.go/blob/master/LICENSE).
+This project is licensed under the [MIT License](https://github.com/EmojiMeals/meals-go/blob/master/LICENSE).
 
