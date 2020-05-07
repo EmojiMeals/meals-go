@@ -18,7 +18,7 @@ import "github.com/EmojiMeals/meals-go"
 
 ## Usage 
 
-You can start checking for recipes using `Meals.mealify()`.
+You can start checking for recipes using `meals.Mealify()`.
 
 ```golang
 meals.Mealify("🌚","🍰") #=> "🥮"
