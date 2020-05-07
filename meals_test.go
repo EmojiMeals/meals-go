@@ -18,12 +18,12 @@ func TestMealify(t *testing.T) {
 		{"🍅🧀🍞", "🍕", nil},
 		{"💧🍈", "🍉", nil},
 		{"🍈💧", "🍉", nil},
-		{"🍈🍳💧", "🍉", ErrNotFound},
+		{"🍈🍳💧", "", ErrNotFound},
 	}
 
 	for _, tt := range cookbook {
 		t.Run(tt.in, func(t *testing.T) {
-			if out, err := Mealify(tt.in); out != tt.expected && err != tt.err {
+			if out, err := Mealify(tt.in); out != tt.expected || err != tt.err {
 				t.Fatalf("expected input %s to make %s. Got \"%s\" instead\n", tt.in, tt.expected, out)
 			}
 		})
