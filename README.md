@@ -14,11 +14,15 @@ then start using it:
 
 ```console
 import "github.com/EmojiMeals/meals-go"
+
+cookbook := meals.NewCookbook("path-to-recipes.json")
+
+cookbook.Mealify("🍞","🍅","🧀")
 ```
 
 ## Usage 
 
-You can start checking for recipes using `Meals.mealify()`.
+You can start checking for recipes using `cookbook.Mealify()`.
 
 ```golang
 meals.Mealify("🌚","🍰") #=> "🥮"
@@ -35,7 +39,7 @@ meals.Mealify("🍶","🍾","🍷","🍸","🍶","🍹","🍺","🍻","🥂","�
 
 ## Is it thread safe
 
-No not yet
+Yes!
 
 ## Can I donate to the project?
 [Yes, here](https://www.buymeacoffee.com/emoji)
@@ -43,4 +47,3 @@ No not yet
 ## License
 
 This project is licensed under the [MIT License](https://github.com/EmojiMeals/meals-go/blob/master/LICENSE).
-

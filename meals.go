@@ -7,25 +7,26 @@ import (
 	"strings"
 )
 
-var (
-	ErrNotFound = errors.New("recipe not found")
-	recipes     map[string]string
-)
+var ErrNotFound = errors.New("recipe not found")
 
-// load recipes
-func init() {
-	recipes = make(map[string]string)
-	data, err := ioutil.ReadFile("recipes.json")
+type Cookbook struct {
+	recipes map[string]string
+}
+
+func NewCookbook(path string) *Cookbook {
+	recipes := make(map[string]string)
+	data, err := ioutil.ReadFile(path)
 	if err != nil {
 		panic(err)
 	}
 	if err := json.Unmarshal(data, &recipes); err != nil {
 		panic(err)
 	}
+	return &Cookbook{recipes}
 }
 
-func containsAll(str, sub string) bool {
-	for _, ingredient := range strings.Split(sub, "") {
+func containsAll(str string, sub ...string) bool {
+	for _, ingredient := range sub {
 		if !strings.Contains(str, ingredient) {
 			return false
 		}
@@ -33,9 +34,9 @@ func containsAll(str, sub string) bool {
 	return true
 }
 
-func Mealify(ingredients string) (string, error) {
-	for key, val := range recipes {
-		if containsAll(key, ingredients) {
+func (cb *Cookbook) Mealify(ingredients ...string) (string, error) {
+	for key, val := range cb.recipes {
+		if containsAll(key, ingredients...) {
 			return val, nil
 		}
 	}
